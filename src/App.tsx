@@ -10,7 +10,7 @@ function App() {
 			<img
 				src="/src/assets/imgs/header.png"
 				alt="preview"
-				style={{ borderRadius: '16px 16px 0 0' }}
+				style={{ borderRadius: '16px 16px 0 0', zIndex: 99 }}
 			/>
 			<Router>
 				<Routes>
@@ -22,7 +22,7 @@ function App() {
 			<img
 				src="/src/assets/imgs/footer.png"
 				alt="preview"
-				style={{ borderRadius: '0 0 16px 16px' }}
+				style={{ borderRadius: '0 0 16px 16px', zIndex: 99 }}
 			/>
 		</>
 	);

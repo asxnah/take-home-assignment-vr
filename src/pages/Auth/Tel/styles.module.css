@@ -115,6 +115,9 @@
 	outline: none;
 	border-color: #edcab8;
 }
+.main .telLoad {
+	border-color: #2d2d2d;
+}
 
 .main .tel button {
 	all: unset;
@@ -133,6 +136,8 @@
 }
 
 .main .submit button {
+	z-index: 1;
+
 	padding: 16px 0;
 
 	width: 100%;
@@ -153,7 +158,30 @@
 	color: #656972;
 	text-align: center;
 }
-
 .main .submit span {
 	font-weight: 400;
+}
+
+.load {
+	position: absolute;
+
+	width: 100%;
+	height: 100%;
+
+	display: grid;
+	place-content: center;
+	transform: translateX(-16px);
+}
+.load .dim {
+	position: absolute;
+	z-index: 10;
+
+	width: 100%;
+	height: 100%;
+
+	background: rgba(0, 0, 0, 0.3);
+}
+.load svg {
+	position: relative;
+	z-index: 20;
 }

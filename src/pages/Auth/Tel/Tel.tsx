@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { TelIcon } from './icons/TelIcon';
 import { CrossIcon } from './icons/CrossIcon';
 import { ErrorIcon } from './icons/ErrorIcon';
+import { LoadingIcon } from './icons/LoadingIcon';
 import styles from './styles.module.css';
 
 const Tel = () => {
@@ -12,15 +13,26 @@ const Tel = () => {
 	const localStorageTel = localStorage.getItem('tel') ?? '';
 
 	const [tel, setTel] = useState<string>(localStorageTel);
-	const hasError = false; // отображение ошибки
+	const [load, setLoad] = useState<boolean>(false);
+	const hasError = false; // отображение ошибки — меняйте
 
 	const handleNextStep = () => {
 		localStorage.setItem('tel', tel);
-		navigate('/auth/sms');
+		setLoad(true);
+
+		setTimeout(() => {
+			navigate('/auth/sms');
+		}, 1000);
 	};
 
 	return (
 		<main className={styles.main}>
+			{load && (
+				<div className={styles.load}>
+					<div className={styles.dim}></div>
+					<LoadingIcon />
+				</div>
+			)}
 			<motion.div
 				className={styles.error}
 				initial={{
@@ -51,7 +63,7 @@ const Tel = () => {
 			</div>
 			<form>
 				<label htmlFor="tel">Номер Телефона</label>
-				<div className={styles.tel}>
+				<div className={load ? `${styles.tel} ${styles.telLoad}` : styles.tel}>
 					<TelIcon />
 					<p>+7&nbsp;</p>
 					<IMaskInput
@@ -67,14 +79,19 @@ const Tel = () => {
 						<CrossIcon />
 					</button>
 				</div>
-				<div className={styles.submit}>
-					<p>
+				<motion.div className={styles.submit}>
+					<motion.p
+						initial={{ opacity: 0, y: 80 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.2 }}
+						style={{ width: '100%' }}
+					>
 						Нажимая “Получить код” вы принимате условия{' '}
 						<span>
 							Пользовательского соглашения и Политики кофиденциальности
 						</span>
 						, а также разрешаете обработку своих данных
-					</p>
+					</motion.p>
 					<button
 						type="button"
 						onClick={handleNextStep}
@@ -82,7 +99,7 @@ const Tel = () => {
 					>
 						Получить код
 					</button>
-				</div>
+				</motion.div>
 			</form>
 		</main>
 	);
