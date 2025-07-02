@@ -12,7 +12,7 @@ const Tel = () => {
 	const localStorageTel = localStorage.getItem('tel') ?? '';
 
 	const [tel, setTel] = useState<string>(localStorageTel);
-	const hasError = true; // отображение ошибки
+	const hasError = false; // отображение ошибки
 
 	const handleNextStep = () => {
 		localStorage.setItem('tel', tel);
@@ -25,9 +25,11 @@ const Tel = () => {
 				className={styles.error}
 				initial={{
 					y: -1000,
+					opacity: 0,
 				}}
 				animate={{
 					y: hasError ? 0 : -1000,
+					opacity: hasError ? 1 : 0,
 				}}
 			>
 				<ErrorIcon />
