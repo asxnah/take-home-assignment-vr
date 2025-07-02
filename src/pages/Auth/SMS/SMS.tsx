@@ -63,7 +63,16 @@ const SMS = () => {
 							/>
 						))}
 					</div>
-					<p>Запросить повторно через: {localTimeout}</p>
+					{localTimeout !== 0 ? (
+						<p>Запросить повторно через: {localTimeout}</p>
+					) : (
+						<button
+							onClick={() => setLocalTimeout(60)}
+							style={{ all: 'unset' }}
+						>
+							<p>Запросить код повторно</p>
+						</button>
+					)}
 				</div>
 				<button type="submit" disabled={digits.some((digit) => digit === '')}>
 					Продолжить
