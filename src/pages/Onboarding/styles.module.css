@@ -1,0 +1,81 @@
+.default {
+	display: grid;
+	place-content: center;
+}
+.default svg {
+	width: 100%;
+}
+
+.main {
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.main h2 {
+	margin-bottom: 14px;
+
+	font-weight: 500;
+	font-size: 30px;
+	text-align: center;
+
+	color: #000;
+}
+
+.main p {
+	margin-bottom: 25px;
+
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 24px;
+	text-align: center;
+
+	color: #656972;
+}
+
+.main button {
+	padding: 16px 0;
+	margin-bottom: 15px;
+
+	width: 100%;
+
+	border: none;
+	border-radius: 16px;
+	background-color: #343434;
+
+	font-weight: 500;
+	font-size: 17px;
+	text-align: center;
+	color: #fff;
+}
+
+.main .slider {
+	margin-bottom: 35px;
+
+	display: flex;
+	justify-content: center;
+	gap: 4px;
+}
+
+.main .content {
+	position: relative;
+
+	flex: 1;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.main .content svg {
+	width: 100%;
+}
+
+.main .slider div {
+	height: 7px;
+}
+
+.main .slider div svg {
+	transform: translateY(-100%);
+}

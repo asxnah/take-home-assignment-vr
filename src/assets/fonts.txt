@@ -1,0 +1,5 @@
+300 - regular
+400 - auth span bold, tel label, tel input, error paragraph
+500 - onboarding headings, button
+590 (600) - error heading
+700 - auth headings

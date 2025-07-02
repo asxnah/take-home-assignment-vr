@@ -1,0 +1,95 @@
+.main {
+	display: flex;
+	flex-direction: column;
+}
+
+.main > button {
+	margin: 6px 0;
+
+	display: flex;
+	align-items: center;
+	gap: 7px;
+
+	background: none;
+	border: none;
+	font-weight: 400;
+	font-size: 17px;
+	line-height: 22px;
+	color: #2b3134;
+}
+
+.main .heading {
+	margin-bottom: 10px;
+}
+
+.main .heading h2 {
+	margin: 4px 0;
+
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 41px;
+}
+
+.main .heading p {
+	font-weight: 300;
+	font-size: 15px;
+	color: #656972;
+}
+
+.main .digits {
+	margin: 10px 0;
+
+	display: flex;
+	gap: 16px;
+}
+
+.main input {
+	width: 50px;
+	height: 55px;
+
+	font-weight: 400;
+	font-size: 26px;
+	text-align: center;
+
+	border: 1.5px solid #868686;
+	border-radius: 12px;
+}
+input:focus-visible {
+	outline: none;
+	border-color: #edcab8;
+	caret-color: transparent;
+}
+
+.main form {
+	flex: 1;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.main form p {
+	margin-top: 5px;
+
+	color: #656972;
+	font-weight: 300;
+	font-size: 15px;
+}
+
+.main form button {
+	padding: 16px 0;
+	margin-bottom: 15px;
+
+	width: 100%;
+
+	border: none;
+	border-radius: 16px;
+	background-color: #343434;
+
+	font-weight: 600;
+	font-size: 17px;
+	line-height: 22px;
+	text-align: center;
+
+	color: #fff;
+}
