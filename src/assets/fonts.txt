@@ -4,12 +4,12 @@
 590 (600) - error heading
 700 - auth headings
 
-SF Pro Rounded (700, 500, 400, 300):
+SF Pro Rounded (300, 400, 500, 700):
 onboarding: *
 auth tel: заголовки, лейбл, инпут, соглашение, кнопка
 auth sms: кнопка назад
 
-SF Pro (600, 400):
+SF Pro (400, 600):
 onboarding: -
 auth tel: ошибка *
 auth sms: -
