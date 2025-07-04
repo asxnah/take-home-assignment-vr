@@ -179,7 +179,7 @@ const Auth = () => {
 					>
 						<button onClick={handleBack}>
 							<ArrowIcon />
-							Назад
+							<span>Назад</span>
 						</button>
 
 						<div className={styles.heading}>

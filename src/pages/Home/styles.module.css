@@ -18,9 +18,11 @@
 .main h1 {
 	margin-top: 52px;
 
+	font-family: 'SF Pro Rounded';
 	font-weight: 500;
 }
 .main p {
+	font-family: 'SF Pro Rounded';
 	color: #656972;
 }
 
@@ -39,7 +41,8 @@
 	border-radius: 16px;
 	background-color: #343434;
 
-	font-weight: 600;
+	font-family: 'SF Pro Rounded';
+	font-weight: 500;
 	font-size: 17px;
 	text-align: center;
 

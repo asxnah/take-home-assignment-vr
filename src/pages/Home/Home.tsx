@@ -16,9 +16,7 @@ const Home = () => {
 				<p>Это главный экран</p>
 			</motion.div>
 			<IconOne />
-			<button onClick={() => navigate('/')}>
-				Вернуться на экран загрузки ↩
-			</button>
+			<button onClick={() => navigate('/')}>Вернуться на экран загрузки</button>
 		</main>
 	);
 };
