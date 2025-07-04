@@ -49,6 +49,9 @@
 	text-align: center;
 	color: #fff;
 }
+.main button:active {
+	background-color: hsl(0, 0%, 40%);
+}
 
 .main .slider {
 	margin-bottom: 35px;

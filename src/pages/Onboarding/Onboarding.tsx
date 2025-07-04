@@ -2,12 +2,14 @@ import { useState } from 'react';
 import type { ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+
 import { IconOne } from './icons/IconOne';
 import { IconTwo } from './icons/IconTwo';
 import { IconThree } from './icons/IconThree';
 import { SliderOne } from './icons/SliderOne';
 import { SliderTwo } from './icons/SliderTwo';
 import { SliderThree } from './icons/SliderThree';
+
 import styles from './styles.module.css';
 
 interface Step {
@@ -38,14 +40,19 @@ const steps: Step[] = [
 ];
 
 const Onboarding = () => {
-	const [stepIndex, setStepIndex] = useState(0);
 	const navigate = useNavigate();
+
+	const localStep = Number(localStorage.getItem('step')) || 0;
+	const [stepIndex, setStepIndex] = useState(localStep);
 
 	const handleNext = () => {
 		if (stepIndex < steps.length - 1) {
-			setStepIndex(stepIndex + 1);
+			const nextStep = stepIndex + 1;
+			setStepIndex(nextStep);
+			localStorage.setItem('step', String(nextStep));
 		} else {
-			navigate('/auth/tel');
+			localStorage.setItem('step', '0');
+			navigate('/auth');
 		}
 	};
 
@@ -167,10 +174,19 @@ const Onboarding = () => {
 				<motion.div
 					initial={
 						stepIndex === 0
-							? { opacity: 0, y: 0, position: 'static' }
-							: { opacity: 1, y: 0, position: 'static' }
+							? {
+									opacity: 0,
+									y: 0,
+							  }
+							: {
+									opacity: 1,
+									y: 0,
+							  }
 					}
-					animate={{ opacity: 1, y: 0, position: 'static' }}
+					animate={{
+						opacity: 1,
+						y: 0,
+					}}
 					exit={{ opacity: 1 }}
 					transition={{ duration: 0.5, delay: 0.5 }}
 					style={{ width: '100%' }}

@@ -1,0 +1,291 @@
+.smsStyles {
+	position: relative;
+
+	height: 765px;
+
+	display: flex;
+	flex-direction: column;
+
+	> button {
+		margin: 6px 0;
+
+		display: flex;
+		align-items: center;
+		gap: 7px;
+
+		background: none;
+		border: none;
+		font-weight: 400;
+		font-size: 17px;
+		line-height: 22px;
+		color: #2b3134;
+	}
+
+	.heading {
+		margin-bottom: 10px;
+	}
+
+	.heading h2 {
+		margin: 4px 0;
+
+		font-weight: 700;
+		font-size: 30px;
+		line-height: 41px;
+	}
+
+	.heading p {
+		font-weight: 300;
+		font-size: 15px;
+		color: #656972;
+	}
+
+	.digits {
+		margin: 10px 0;
+
+		display: flex;
+		gap: 16px;
+	}
+
+	input {
+		width: 50px;
+		height: 55px;
+
+		font-weight: 400;
+		font-size: 26px;
+		text-align: center;
+
+		border: 1.5px solid #868686;
+		border-radius: 12px;
+	}
+	input:focus-visible {
+		outline: none;
+		border-color: #edcab8;
+		caret-color: transparent;
+	}
+
+	form {
+		flex: 1;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	form p {
+		padding-top: 5px;
+
+		color: #656972;
+		font-weight: 300;
+		font-size: 15px;
+	}
+
+	form button {
+		padding: 16px 0;
+		margin-bottom: 15px;
+
+		width: 100%;
+
+		border: none;
+		border-radius: 16px;
+		background-color: #343434;
+
+		font-weight: 600;
+		font-size: 17px;
+		line-height: 22px;
+		text-align: center;
+
+		color: #fff;
+	}
+	form button:active {
+		background-color: hsl(0, 0%, 30%);
+	}
+}
+
+.telStyles {
+	position: relative;
+
+	height: 765px;
+
+	display: flex;
+	flex-direction: column;
+
+	.error {
+		position: absolute;
+		top: 3.5px;
+
+		padding: 14px 14px 12px 14px;
+
+		display: flex;
+		align-items: center;
+		gap: 9.5px;
+
+		background-color: #f5f5f5;
+		border-radius: 24px;
+	}
+
+	.error h4 {
+		font-weight: 600;
+	}
+
+	.error p {
+		font-weight: 400;
+	}
+
+	.error svg {
+		width: 32.5px;
+		height: 32.5px;
+
+		border: 3px solid #fff;
+		border-radius: 7px;
+	}
+
+	.error div {
+		flex: 1;
+	}
+
+	.heading {
+		margin-top: 37px;
+		margin-bottom: 46px;
+
+		display: grid;
+		gap: 4px;
+	}
+
+	.heading h2 {
+		font-weight: 700;
+		font-size: 30px;
+
+		color: #2b3134;
+	}
+
+	.heading p {
+		font-weight: 300;
+		font-size: 15px;
+		color: #656972;
+	}
+
+	form {
+		flex: 1;
+
+		display: flex;
+		flex-direction: column;
+	}
+
+	form label {
+		margin-left: 9px;
+
+		font-weight: 400;
+		font-size: 13px;
+		color: #999ea7;
+	}
+
+	.tel {
+		margin-top: 7px;
+		padding: 12px 16px;
+
+		display: flex;
+		align-items: center;
+
+		border: 1px solid #f2f2f5;
+		border-radius: 16px;
+	}
+	.tel:focus-within {
+		border-color: #edcab8;
+	}
+
+	.tel p {
+		margin-left: 4px;
+
+		font-weight: 400;
+		font-size: 16px;
+		color: #020e22;
+	}
+
+	.tel input {
+		flex: 1;
+		height: fit-content;
+
+		border: none;
+		background: none;
+
+		text-align: left;
+		font-weight: 400;
+		font-size: 16px;
+		color: #020e22;
+	}
+	.tel input:focus-visible {
+		outline: none;
+		border-color: #edcab8;
+	}
+	.telLoad {
+		border-color: #2d2d2d;
+	}
+
+	.tel button {
+		all: unset;
+		width: 20px;
+		height: 20px;
+	}
+
+	.submit {
+		margin-top: auto;
+		margin-bottom: 15px;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		gap: 25px;
+	}
+
+	.submit button {
+		padding: 16px 0;
+
+		width: 100%;
+
+		border: none;
+		border-radius: 16px;
+		background-color: #343434;
+
+		font-weight: 600;
+		font-size: 17px;
+		text-align: center;
+
+		color: #fff;
+	}
+	.submit button:active {
+		background-color: hsl(0, 0%, 40%);
+	}
+
+	.submit p {
+		font-size: 15px;
+		color: #656972;
+		text-align: center;
+	}
+	.submit span {
+		font-weight: 400;
+	}
+
+	.load {
+		position: absolute;
+
+		width: 100%;
+		height: 100%;
+
+		display: grid;
+		place-content: center;
+		transform: translateX(-16px);
+	}
+	.load .dim {
+		position: absolute;
+		z-index: 99;
+
+		width: 100%;
+		height: 100%;
+
+		background: rgba(0, 0, 0, 0.3);
+	}
+	.load svg {
+		position: relative;
+		z-index: 20;
+	}
+}
