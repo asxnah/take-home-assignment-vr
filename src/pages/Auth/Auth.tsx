@@ -58,6 +58,9 @@ const Auth = () => {
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		localStorage.setItem('step', 'tel');
+		localStorage.setItem('tel', '');
+		setDigits(['', '', '', '']);
 		navigate('/home');
 	};
 
