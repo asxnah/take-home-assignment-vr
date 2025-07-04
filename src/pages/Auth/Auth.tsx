@@ -42,6 +42,7 @@ const Auth = () => {
 	const handleBack = () => {
 		localStorage.setItem('step', 'tel');
 		setDigits(['', '', '', '']);
+		setLocalTimeout(60);
 		setStep('tel');
 	};
 
