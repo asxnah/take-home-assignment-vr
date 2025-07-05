@@ -159,7 +159,7 @@ const Auth = () => {
 								<button
 									type="button"
 									onClick={handleNextStep}
-									disabled={!(tel && tel.length === 13)}
+									disabled={!(tel && tel.length === 13) || hasError === true}
 								>
 									Получить код
 								</button>
