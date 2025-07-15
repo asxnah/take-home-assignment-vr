@@ -1,7 +1,7 @@
 .smsStyles {
 	position: relative;
 
-	height: 765px;
+	height: 100%;
 
 	display: flex;
 	flex-direction: column;
@@ -111,7 +111,7 @@
 .telStyles {
 	position: relative;
 
-	height: 765px;
+	height: 100%;
 
 	display: flex;
 	flex-direction: column;

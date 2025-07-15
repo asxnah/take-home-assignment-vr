@@ -58,24 +58,12 @@
 main {
 	padding: 0 16px;
 
-	width: 393px;
-	height: 765px;
+	min-height: 100vh;
+	width: 100%;
 
 	background-color: #fcfcfc;
 }
 
 button:disabled {
 	background-color: #b4b4b4 !important;
-}
-
-#root {
-	position: relative;
-
-	min-height: 100vh;
-
-	display: grid;
-	place-content: center;
-	background-color: lightgray;
-
-	overflow-y: hidden;
 }

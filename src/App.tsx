@@ -7,11 +7,6 @@ import Home from './pages/Home/Home';
 function App() {
 	return (
 		<>
-			<img
-				src="/src/assets/imgs/header.png"
-				alt="preview"
-				style={{ borderRadius: '16px 16px 0 0', zIndex: 99 }}
-			/>
 			<Router>
 				<Routes>
 					<Route path="/" element={<Onboarding />} />
@@ -19,11 +14,6 @@ function App() {
 					<Route path="/home" element={<Home />} />
 				</Routes>
 			</Router>
-			<img
-				src="/src/assets/imgs/footer.png"
-				alt="preview"
-				style={{ borderRadius: '0 0 16px 16px', zIndex: 99 }}
-			/>
 		</>
 	);
 }
