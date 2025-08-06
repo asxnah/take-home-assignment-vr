@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IMaskInput } from 'react-imask';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -26,6 +26,8 @@ const Auth = () => {
 
 	const [localTimeout, setLocalTimeout] = useState<number>(60);
 	const [digits, setDigits] = useState<string[]>(['', '', '', '']);
+
+	const digitsRefs = useRef<(HTMLInputElement | null)[]>([]);
 
 	const handleNextStep = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -216,6 +218,9 @@ const Auth = () => {
 										<input
 											className={styles.form__input}
 											key={i}
+											ref={(el) => {
+												digitsRefs.current[i] = el;
+											}}
 											type="text"
 											value={digit}
 											onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
@@ -224,6 +229,9 @@ const Auth = () => {
 													const updatedDigits = [...digits];
 													updatedDigits[i] = value;
 													setDigits(updatedDigits);
+													if (value && i < digits.length - 1) {
+														digitsRefs.current[i + 1]?.focus();
+													}
 												}
 											}}
 											pattern="\d"
