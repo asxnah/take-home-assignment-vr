@@ -234,6 +234,11 @@ const Auth = () => {
 													}
 												}
 											}}
+											onKeyDown={(e) => {
+												if (e.key === 'Backspace' && digit === '' && i > 0) {
+													digitsRefs.current[i - 1]?.focus();
+												}
+											}}
 											pattern="\d"
 											inputMode="numeric"
 											min={0}
