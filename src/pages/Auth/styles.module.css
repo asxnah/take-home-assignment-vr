@@ -87,11 +87,6 @@
 	border-color: #edcab8;
 }
 
-.tel__icon {
-	width: 21px;
-	height: 16px;
-}
-
 .tel__prefix {
 	margin-left: 4px;
 	font-family: 'SF Pro Rounded';
@@ -101,10 +96,11 @@
 }
 
 .tel__input {
-	flex: 1;
 	height: fit-content;
+
 	border: none;
 	background: none;
+
 	text-align: left;
 	font-family: 'SF Pro Rounded';
 	font-weight: 400;
@@ -121,7 +117,14 @@
 	border-color: #2d2d2d;
 }
 
+.tel__icon {
+	flex: 1;
+	width: 21px;
+	height: 16px;
+}
+
 .tel__button {
+	flex: 1;
 	all: unset;
 	width: 20px;
 	height: 20px;
