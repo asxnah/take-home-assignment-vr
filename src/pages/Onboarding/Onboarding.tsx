@@ -59,7 +59,7 @@ const Onboarding = () => {
 	return (
 		<main>
 			<div className={styles.main}>
-				<div className={styles.content}>
+				<div className={styles.main__content}>
 					{stepIndex === 0 && (
 						<motion.div
 							initial={
@@ -137,8 +137,8 @@ const Onboarding = () => {
 							transition={{ duration: 0.5, delay: 0.5 }}
 							style={{ width: '100%' }}
 						>
-							<h2>{steps[0].title}</h2>
-							<p>{steps[0].description}</p>
+							<h2 className={styles.main__title}>{steps[0].title}</h2>
+							<p className={styles.main__description}>{steps[0].description}</p>
 						</motion.div>
 					)}
 					{(stepIndex === 1 || stepIndex === 2) && (
@@ -154,8 +154,8 @@ const Onboarding = () => {
 							transition={{ duration: 0.2 }}
 							style={{ width: '100%' }}
 						>
-							<h2>{steps[1].title}</h2>
-							<p>{steps[1].description}</p>
+							<h2 className={styles.main__title}>{steps[1].title}</h2>
+							<p className={styles.main__description}>{steps[1].description}</p>
 						</motion.div>
 					)}
 					{stepIndex === 2 && (
@@ -165,8 +165,8 @@ const Onboarding = () => {
 							transition={{ duration: 0.2 }}
 							style={{ width: '100%' }}
 						>
-							<h2>{steps[2].title}</h2>
-							<p>{steps[2].description}</p>
+							<h2 className={styles.main__title}>{steps[2].title}</h2>
+							<p className={styles.main__description}>{steps[2].description}</p>
 						</motion.div>
 					)}
 				</div>
@@ -191,8 +191,8 @@ const Onboarding = () => {
 					transition={{ duration: 0.5, delay: 0.5 }}
 					style={{ width: '100%' }}
 				>
-					<div className={styles.slider}>
-						<motion.div
+					<div className={styles.main__slider}>
+						<motion.div className={styles.main__slider__item}
 							animate={{
 								x: stepIndex === 0 ? 0 : stepIndex === 1 ? 17 : 28,
 							}}
@@ -200,20 +200,22 @@ const Onboarding = () => {
 						>
 							<SliderOne />
 						</motion.div>
-						<motion.div
+						<motion.div className={styles.main__slider__item}
 							animate={{ x: stepIndex === 0 ? 0 : stepIndex === 1 ? -39 : -39 }}
 							transition={{ duration: 0.2 }}
 						>
 							<SliderTwo />
 						</motion.div>
-						<motion.div
+						<motion.div className={styles.main__slider__item}
 							animate={{ x: stepIndex === 0 ? 0 : stepIndex === 1 ? 0 : -40 }}
 							transition={{ duration: 0.2 }}
 						>
 							<SliderThree />
 						</motion.div>
 					</div>
-					<button onClick={handleNext}>Далее ➜</button>
+					<button className={styles.main__button} onClick={handleNext}>
+						Далее ➜
+					</button>
 				</motion.div>
 			</div>
 		</main>
