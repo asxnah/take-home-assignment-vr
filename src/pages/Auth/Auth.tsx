@@ -12,7 +12,7 @@ import { ArrowIcon } from './icons/ArrowIcon';
 import styles from './styles.module.css';
 
 const Auth = () => {
-	// отображение ошибки tel — меняйте
+	// отображение ошибки tel (менять вручную initial state)
 	const [hasError, setHasError] = useState<boolean>(false);
 
 	const navigate = useNavigate();
@@ -27,7 +27,9 @@ const Auth = () => {
 	const [localTimeout, setLocalTimeout] = useState<number>(60);
 	const [digits, setDigits] = useState<string[]>(['', '', '', '']);
 
-	const handleNextStep = () => {
+	const handleNextStep = (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+
 		localStorage.setItem('tel', tel);
 		localStorage.setItem('step', 'sms');
 		setHasError(false);
@@ -82,13 +84,13 @@ const Auth = () => {
 						transition={{ duration: 0.3 }}
 					>
 						{load && (
-							<div className={styles.load}>
-								<div className={styles.dim}></div>
-								<LoadingIcon />
+							<div className={styles.tel__loader}>
+								<div className={styles.tel__loader__dim}></div>
+								<LoadingIcon className={styles.tel__loader__icon} />
 							</div>
 						)}
 						<motion.div
-							className={styles.error}
+							className={styles.tel__error}
 							initial={{
 								y: -1000,
 								opacity: 0,
@@ -98,34 +100,37 @@ const Auth = () => {
 								opacity: hasError ? 1 : 0,
 							}}
 						>
-							<ErrorIcon />
-							<div>
-								<h4>Ошибка</h4>
-								<p>
+							<ErrorIcon className={styles.tel__error__icon} />
+							<div className={styles.tel__error__content}>
+								<h4 className={styles.tel__error__title}>Ошибка</h4>
+								<p className={styles.tel__error__text}>
 									С момента последней отправки прошло слишком мало времени,
 									повторите попытку позднее. Если у вас включен VPN, выключите и
 									повторите попытку.
 								</p>
 							</div>
 						</motion.div>
-						<div className={styles.heading}>
-							<h2>Авторизация</h2>
-							<p>
+						<div className={styles.tel__heading}>
+							<h2 className={styles.tel__heading__title}>Авторизация</h2>
+							<p className={styles.tel__heading__text}>
 								Войдите, чтобы управлять своими записями, управлять аккаунтом и
 								смотреть ход лечения.
 							</p>
 						</div>
-						<form>
-							<label htmlFor="tel">Номер Телефона</label>
+						<form className={styles.tel__form} onSubmit={handleNextStep}>
+							<label htmlFor="tel" className={styles.tel__form__label}>
+								Номер Телефона
+							</label>
 							<div
 								className={
-									load ? `${styles.tel} ${styles.telLoad}` : styles.tel
+									load ? `${styles.tel} ${styles.tel__load}` : styles.tel
 								}
 							>
 								<TelIcon />
-								<p>+7&nbsp;</p>
+								<p className={styles.tel__prefix}>+7&nbsp;</p>
 								<IMaskInput
 									id="tel"
+									className={styles.tel__input}
 									mask="000 000 00 00"
 									definitions={{ '0': /\d/ }}
 									unmask={false}
@@ -133,12 +138,17 @@ const Auth = () => {
 									onAccept={(value) => setTel(value)}
 									inputMode="numeric"
 								/>
-								<button type="button" onClick={() => setTel('')}>
+								<button
+									className={styles.tel__button}
+									type="button"
+									onClick={() => setTel('')}
+								>
 									<CrossIcon />
 								</button>
 							</div>
-							<motion.div className={styles.submit}>
+							<motion.div className={styles.tel__submit}>
 								<motion.p
+									className={styles.tel__submit__text}
 									initial={{
 										opacity: 0,
 										y: 80,
@@ -151,14 +161,14 @@ const Auth = () => {
 									style={{ width: '100%' }}
 								>
 									Нажимая “Получить код” вы принимате условия{' '}
-									<span>
+									<span className={styles.tel__submit__text__link}>
 										Пользовательского соглашения и Политики кофиденциальности
 									</span>
 									, а также разрешаете обработку своих данных
 								</motion.p>
 								<button
-									type="button"
-									onClick={handleNextStep}
+									className={styles.tel__submit__button}
+									type="submit"
 									disabled={!(tel && tel.length === 13) || hasError === true}
 								>
 									Получить код
@@ -182,23 +192,29 @@ const Auth = () => {
 						}}
 						transition={{ duration: 0.3 }}
 					>
-						<button onClick={handleBack}>
+						<button
+							className={styles.smsStyles__backButton}
+							onClick={handleBack}
+						>
 							<ArrowIcon />
-							<span>Назад</span>
+							<span className={styles.smsStyles__backButton__text}>Назад</span>
 						</button>
 
-						<div className={styles.heading}>
-							<h2>Код подтверждения</h2>
-							<p>
+						<div className={styles.smsStyles__heading}>
+							<h2 className={styles.smsStyles__heading__title}>
+								Код подтверждения
+							</h2>
+							<p className={styles.smsStyles__heading__text}>
 								Код отправлен на + 7 {tel} <br />
 								Введите код из SMS
 							</p>
 						</div>
-						<form onSubmit={handleSubmit}>
+						<form className={styles.smsStyles__form} onSubmit={handleSubmit}>
 							<div>
-								<div className={styles.digits}>
+								<div className={styles.form__digits}>
 									{digits.map((digit, i) => (
 										<input
+											className={styles.form__input}
 											key={i}
 											type="text"
 											value={digit}
@@ -219,7 +235,9 @@ const Auth = () => {
 									))}
 								</div>
 								{localTimeout !== 0 ? (
-									<p>Запросить повторно через: {localTimeout}</p>
+									<p className={styles.form__resendText}>
+										Запросить повторно через: {localTimeout}
+									</p>
 								) : (
 									<button
 										onClick={() => {
@@ -228,11 +246,14 @@ const Auth = () => {
 										}}
 										style={{ all: 'unset' }}
 									>
-										<p>Запросить код повторно</p>
+										<p className={styles.form__resendText}>
+											Запросить код повторно
+										</p>
 									</button>
 								)}
 							</div>
 							<button
+								className={styles.form__button}
 								type="submit"
 								disabled={digits.some((digit) => digit === '')}
 							>

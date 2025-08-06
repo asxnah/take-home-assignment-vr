@@ -9,14 +9,17 @@ const Home = () => {
 	return (
 		<main className={styles.main}>
 			<motion.div
+				className={styles.main__content}
 				initial={{ opacity: 0, y: -100, transitionTimingFunction: 'ease-out' }}
 				animate={{ opacity: 1, y: 0, transitionTimingFunction: 'ease-out' }}
 			>
-				<h1>Добро пожаловать!</h1>
-				<p>Это главный экран</p>
+				<h1 className={styles.main__title}>Добро пожаловать!</h1>
+				<p className={styles.main__description}>Это главный экран</p>
 			</motion.div>
-			<IconOne />
-			<button onClick={() => navigate('/')}>Вернуться на экран загрузки</button>
+			<IconOne className={styles.main__icon} />
+			<button className={styles.main__button} onClick={() => navigate('/')}>
+				Вернуться на экран загрузки
+			</button>
 		</main>
 	);
 };

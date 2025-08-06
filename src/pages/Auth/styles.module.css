@@ -1,312 +1,283 @@
-.smsStyles {
-	position: relative;
-
-	height: 100%;
-
-	display: flex;
-	flex-direction: column;
-
-	> button {
-		margin: 6px 0;
-
-		display: flex;
-		align-items: center;
-		gap: 7px;
-
-		background: none;
-		border: none;
-	}
-	> button span {
-		font-family: 'SF Pro Rounded';
-		font-weight: 400;
-		font-size: 17px;
-		color: #2b3134;
-	}
-
-	.heading {
-		margin-bottom: 10px;
-	}
-
-	.heading h2 {
-		margin: 4px 0;
-
-		font-family: 'SF Pro Rounded';
-		font-weight: 700;
-		font-size: 30px;
-		line-height: 41px;
-	}
-
-	.heading p {
-		font-family: 'SF Pro Display';
-		font-weight: 300;
-		font-size: 15px;
-		color: #656972;
-	}
-
-	.digits {
-		margin: 10px 0;
-
-		display: flex;
-		gap: 16px;
-	}
-
-	input {
-		width: 50px;
-		height: 55px;
-
-		font-family: 'SF Pro Rounded';
-		font-weight: 400;
-		font-size: 26px;
-		text-align: center;
-
-		border: 1.5px solid #868686;
-		border-radius: 12px;
-	}
-	input:focus-visible {
-		outline: none;
-		border-color: #edcab8;
-		caret-color: transparent;
-	}
-
-	form {
-		flex: 1;
-
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-	}
-
-	form p {
-		padding-top: 5px;
-
-		color: #656972;
-		font-family: 'SF Pro Display';
-		font-weight: 300;
-		font-size: 15px;
-	}
-
-	form button {
-		padding: 16px 0;
-		margin-bottom: 15px;
-
-		width: 100%;
-
-		border: none;
-		border-radius: 16px;
-		background-color: #343434;
-
-		font-family: 'SF Pro Rounded';
-		font-weight: 500;
-		font-size: 17px;
-		line-height: 22px;
-		text-align: center;
-
-		color: #fff;
-	}
-	form button:active {
-		background-color: hsl(0, 0%, 30%);
-	}
-}
-
 .telStyles {
 	position: relative;
-
 	height: 100%;
-
 	display: flex;
 	flex-direction: column;
+}
 
-	.error {
-		position: absolute;
-		left: 0;
-		top: 3.5px;
+.tel__error {
+	position: absolute;
+	left: 0;
+	top: 3.5px;
+	padding: 14px 14px 12px 14px;
+	margin: 0 16px;
+	display: flex;
+	align-items: center;
+	gap: 9.5px;
+	background-color: #f5f5f5;
+	border-radius: 24px;
+}
 
-		padding: 14px 14px 12px 14px;
-		margin: 0 16px;
+.tel__error__title {
+	font-family: 'SF Pro Rounded';
+	font-weight: 600;
+}
 
-		display: flex;
-		align-items: center;
-		gap: 9.5px;
+.tel__error__text {
+	font-family: 'SF Pro Rounded';
+	font-weight: 400;
+}
 
-		background-color: #f5f5f5;
-		border-radius: 24px;
-	}
+.tel__error__icon {
+	width: 32.5px;
+	height: 32.5px;
+	border: 3px solid #fff;
+	border-radius: 7px;
+}
 
-	.error h4 {
-		font-family: 'SF Pro Rounded';
-		font-weight: 600;
-	}
+.tel__error__content {
+	flex: 1;
+}
 
-	.error p {
-		font-family: 'SF Pro Rounded';
-		font-weight: 400;
-	}
+.tel__heading {
+	margin-top: 37px;
+	margin-bottom: 46px;
+	display: grid;
+	gap: 4px;
+}
 
-	.error svg {
-		width: 32.5px;
-		height: 32.5px;
+.tel__heading__title {
+	font-family: 'SF Pro Rounded';
+	font-weight: 700;
+	font-size: 30px;
+	color: #2b3134;
+}
 
-		border: 3px solid #fff;
-		border-radius: 7px;
-	}
+.tel__heading__text {
+	font-family: 'SF Pro Display';
+	font-weight: 300;
+	font-size: 15px;
+	color: #656972;
+}
 
-	.error div {
-		flex: 1;
-	}
+.tel__form {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
 
-	.heading {
-		margin-top: 37px;
-		margin-bottom: 46px;
+.tel__form__label {
+	margin-left: 9px;
+	font-family: 'SF Pro Rounded';
+	font-weight: 400;
+	font-size: 13px;
+	color: #999ea7;
+}
 
-		display: grid;
-		gap: 4px;
-	}
+.tel {
+	margin-top: 7px;
+	padding: 12px 16px;
+	display: flex;
+	align-items: center;
+	border: 1px solid #f2f2f5;
+	border-radius: 16px;
+}
 
-	.heading h2 {
-		font-family: 'SF Pro Rounded';
-		font-weight: 700;
-		font-size: 30px;
+.tel:focus-within {
+	border-color: #edcab8;
+}
 
-		color: #2b3134;
-	}
+.tel__prefix {
+	margin-left: 4px;
+	font-family: 'SF Pro Rounded';
+	font-weight: 400;
+	font-size: 16px;
+	color: #020e22;
+}
 
-	.heading p {
-		font-family: 'SF Pro Display';
-		font-weight: 300;
-		font-size: 15px;
-		color: #656972;
-	}
+.tel__input {
+	flex: 1;
+	height: fit-content;
+	border: none;
+	background: none;
+	text-align: left;
+	font-family: 'SF Pro Rounded';
+	font-weight: 400;
+	font-size: 16px;
+	color: #020e22;
+}
 
-	form {
-		flex: 1;
+.tel__input:focus-visible {
+	outline: none;
+	border-color: #edcab8;
+}
 
-		display: flex;
-		flex-direction: column;
-	}
+.tel__load {
+	border-color: #2d2d2d;
+}
 
-	form label {
-		margin-left: 9px;
+.tel__button {
+	all: unset;
+	width: 20px;
+	height: 20px;
+}
 
-		font-family: 'SF Pro Rounded';
-		font-weight: 400;
-		font-size: 13px;
-		color: #999ea7;
-	}
+.tel__submit {
+	flex: 1;
+	margin-bottom: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	gap: 25px;
+}
 
-	.tel {
-		margin-top: 7px;
-		padding: 12px 16px;
+.tel__submit__button {
+	padding: 16px 0;
+	width: 100%;
+	border: none;
+	border-radius: 16px;
+	background-color: #343434;
+	font-family: 'SF Pro Rounded';
+	font-weight: 500;
+	font-size: 17px;
+	text-align: center;
+	color: #fff;
+}
 
-		display: flex;
-		align-items: center;
+.tel__submit__button:active {
+	background-color: hsl(0, 0%, 40%);
+}
 
-		border: 1px solid #f2f2f5;
-		border-radius: 16px;
-	}
-	.tel:focus-within {
-		border-color: #edcab8;
-	}
+.tel__submit__text {
+	font-family: 'SF Pro Rounded';
+	font-weight: 300;
+	font-size: 15px;
+	color: #656972;
+	text-align: center;
+}
 
-	.tel p {
-		margin-left: 4px;
+.tel__submit__text__link {
+	font-family: 'SF Pro Rounded';
+	font-weight: 400;
+}
 
-		font-family: 'SF Pro Rounded';
-		font-weight: 400;
-		font-size: 16px;
-		color: #020e22;
-	}
+.tel__loader {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: grid;
+	place-content: center;
+	transform: translateX(-16px);
+}
 
-	.tel input {
-		flex: 1;
-		height: fit-content;
+.tel__loader__dim {
+	position: absolute;
+	z-index: 99;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+}
 
-		border: none;
-		background: none;
+.tel__loader__icon {
+	position: relative;
+	z-index: 20;
+}
 
-		text-align: left;
-		font-family: 'SF Pro Rounded';
-		font-weight: 400;
-		font-size: 16px;
-		color: #020e22;
-	}
-	.tel input:focus-visible {
-		outline: none;
-		border-color: #edcab8;
-	}
-	.telLoad {
-		border-color: #2d2d2d;
-	}
+.smsStyles {
+	position: relative;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
 
-	.tel button {
-		all: unset;
-		width: 20px;
-		height: 20px;
-	}
+.smsStyles__backButton {
+	margin: 6px 0;
+	display: flex;
+	align-items: center;
+	gap: 7px;
+	background: none;
+	border: none;
+}
 
-	.submit {
-		flex: 1;
+.smsStyles__backButton__text {
+	font-family: 'SF Pro Rounded';
+	font-weight: 400;
+	font-size: 17px;
+	color: #2b3134;
+}
 
-		margin-bottom: 15px;
+.smsStyles__heading {
+	margin-bottom: 10px;
+}
 
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
-		gap: 25px;
-	}
+.smsStyles__heading__title {
+	margin: 4px 0;
+	font-family: 'SF Pro Rounded';
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 41px;
+}
 
-	.submit button {
-		padding: 16px 0;
+.smsStyles__heading__text {
+	font-family: 'SF Pro Display';
+	font-weight: 300;
+	font-size: 15px;
+	color: #656972;
+}
 
-		width: 100%;
+.form__digits {
+	margin: 10px 0;
+	display: flex;
+	gap: 16px;
+}
 
-		border: none;
-		border-radius: 16px;
-		background-color: #343434;
+.form__input {
+	width: 50px;
+	height: 55px;
+	font-family: 'SF Pro Rounded';
+	font-weight: 400;
+	font-size: 26px;
+	text-align: center;
+	border: 1.5px solid #868686;
+	border-radius: 12px;
+}
 
-		font-family: 'SF Pro Rounded';
-		font-weight: 500;
-		font-size: 17px;
-		text-align: center;
+.form__input:focus-visible {
+	outline: none;
+	border-color: #edcab8;
+	caret-color: transparent;
+}
 
-		color: #fff;
-	}
-	.submit button:active {
-		background-color: hsl(0, 0%, 40%);
-	}
+.smsStyles__form {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
 
-	.submit p {
-		font-family: 'SF Pro Rounded';
-		font-weight: 300;
-		font-size: 15px;
-		color: #656972;
-		text-align: center;
-	}
-	.submit span {
-		font-family: 'SF Pro Rounded';
-		font-weight: 400;
-	}
+.form__resendText {
+	padding-top: 5px;
+	color: #656972;
+	font-family: 'SF Pro Display';
+	font-weight: 300;
+	font-size: 15px;
+}
 
-	.load {
-		position: absolute;
+.form__button {
+	padding: 16px 0;
+	margin-bottom: 15px;
+	width: 100%;
+	border: none;
+	border-radius: 16px;
+	background-color: #343434;
+	font-family: 'SF Pro Rounded';
+	font-weight: 500;
+	font-size: 17px;
+	line-height: 22px;
+	text-align: center;
+	color: #fff;
+}
 
-		width: 100%;
-		height: 100%;
-
-		display: grid;
-		place-content: center;
-		transform: translateX(-16px);
-	}
-	.load .dim {
-		position: absolute;
-		z-index: 99;
-
-		width: 100%;
-		height: 100%;
-
-		background: rgba(0, 0, 0, 0.3);
-	}
-	.load svg {
-		position: relative;
-		z-index: 20;
-	}
+.form__button:active {
+	background-color: hsl(0, 0%, 30%);
 }
