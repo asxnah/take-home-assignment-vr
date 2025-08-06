@@ -87,6 +87,11 @@
 	border-color: #edcab8;
 }
 
+.tel__icon {
+	width: 21px;
+	height: 16px;
+}
+
 .tel__prefix {
 	margin-left: 4px;
 	font-family: 'SF Pro Rounded';
@@ -118,6 +123,11 @@
 
 .tel__button {
 	all: unset;
+	width: 20px;
+	height: 20px;
+}
+
+.tel__button__icon {
 	width: 20px;
 	height: 20px;
 }

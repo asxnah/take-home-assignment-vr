@@ -128,7 +128,7 @@ const Auth = () => {
 									load ? `${styles.tel} ${styles.tel__load}` : styles.tel
 								}
 							>
-								<TelIcon />
+								<TelIcon className={styles.tel__icon} />
 								<p className={styles.tel__prefix}>+7&nbsp;</p>
 								<IMaskInput
 									id="tel"
@@ -145,7 +145,7 @@ const Auth = () => {
 									type="button"
 									onClick={() => setTel('')}
 								>
-									<CrossIcon />
+									<CrossIcon className={styles.tel__button__icon} />
 								</button>
 							</div>
 							<motion.div className={styles.tel__submit}>

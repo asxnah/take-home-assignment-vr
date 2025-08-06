@@ -1,4 +1,4 @@
-export const TelIcon = () => {
+export const TelIcon = ({ ...rest }) => {
 	return (
 		<svg
 			width="21"
@@ -6,6 +6,7 @@ export const TelIcon = () => {
 			viewBox="0 0 21 16"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
+			{...rest}
 		>
 			<g clipPath="url(#clip0_1_4664)">
 				<rect width="21" height="16" rx="3" fill="#1A47B8" />
